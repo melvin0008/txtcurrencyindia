@@ -1,1 +1,1 @@
-web: ruby app.rbviews
+web: ruby app.rb
