@@ -4,7 +4,7 @@ require 'rest_client'
 
 
 
-get '/convert' do
+get '/' do
 	message=params['txtweb-message'].split(' ')
 	if message.length ==2
 		begin
@@ -22,10 +22,4 @@ get '/convert' do
 	else
 		erb :errorPage
 	end
-	erb :errorPage
-end
-
-
-get '/' do
-	erb :errorPage
 end
