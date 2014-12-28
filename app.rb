@@ -17,9 +17,9 @@ get '/convert' do
 			return_val= "1 #{countryfrom} => #{dict_result[parameter]['val']} #{countryto}"
 			erb :txtcurrency, :locals => { :returnval => return_val }		
 		rescue NameError
-			
+			erb :errorPage
 		end
 	else
-		
+		erb :errorPage
 	end
 end
