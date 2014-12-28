@@ -22,6 +22,7 @@ get '/convert' do
 	else
 		erb :errorPage
 	end
+	erb :errorPage
 end
 
 
