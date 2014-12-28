@@ -23,3 +23,8 @@ get '/convert' do
 		erb :errorPage
 	end
 end
+
+
+get '/' do
+	erb :errorPage
+end
