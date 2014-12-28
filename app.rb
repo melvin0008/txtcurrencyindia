@@ -5,9 +5,10 @@ require 'rest_client'
 
 
 get '/' do
-	message=params['txtweb-message'].split(' ')
-	if message.length ==2
-		begin
+	begin
+		message=params['txtweb-message'].split(' ')
+		if message.length ==2
+			
 			countryfrom=message[0].upcase
 			countryto=message[1].upcase
 			parameter="#{countryfrom}_#{countryto}"
@@ -16,10 +17,10 @@ get '/' do
 			dict_result=JSON.parse(api_result)
 			return_val= "1 #{countryfrom} => #{dict_result[parameter]['val']} #{countryto}"
 			erb :txtcurrency, :locals => { :returnval => return_val }		
-		rescue NameError
+		else
 			erb :errorPage
 		end
-	else
-		erb :errorPage
+	rescue Exception
+		erb:errorPage
 	end
 end
