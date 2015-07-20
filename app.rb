@@ -12,7 +12,7 @@ get '/' do
 			countryfrom=message[0].upcase
 			countryto=message[1].upcase
 			parameter="#{countryfrom}_#{countryto}"
-			query="http://www.freecurrencyconverterapi.com/api/v2/convert?q=#{parameter}&compact=y"
+			query="http://free.currencyconverterapi.com/api/v3/convert?q=#{parameter}&compact=y"
 			begin
 				api_result = RestClient.get query
 				dict_result=JSON.parse(api_result)
